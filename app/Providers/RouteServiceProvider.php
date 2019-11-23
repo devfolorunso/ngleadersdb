@@ -65,7 +65,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
-        Route::prefix('api')
+        Route::domain('http://api.ngleadersdb.herokuapp.com')
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
