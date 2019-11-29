@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="admin">
-    </Admin>
+    <div id="login">
+    </Login>
     </div>
 @endsection

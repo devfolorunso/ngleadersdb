@@ -28,7 +28,7 @@ export const login = user => {
     })
     .then(res => {
         localStorage.setItem('usertoken', res.data.token)
-        console.log(res)
+        console.log(res.data.token)
     })
     .catch(err => {
         console.log(err)

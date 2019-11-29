@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import ReactDOM from "react-dom";
+import ReactDOM from "react-dom";
 import { login } from "./App";
 import { Button, Container, Form } from "semantic-ui-react";
 
@@ -69,6 +69,6 @@ class Login extends Component {
 
 export default  Login
 
-// if (document.getElementById("login")) {
-//     ReactDOM.render(<Login />, document.getElementById("login"));
-// }
+if (document.getElementById("login")) {
+    ReactDOM.render(<Login />, document.getElementById("login"));
+}
