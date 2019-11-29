@@ -15,3 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/login', 'AuthenticationController@loginPage');
+Route::get('/register', 'AuthenticationController@registerationPage');
+
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin', 'AdminController@index')->name('admin');
+
+// Route::view('/admin{path?}', 'admin');
