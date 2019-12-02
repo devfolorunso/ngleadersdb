@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { login } from "./App";
+import { login } from "./UserFunctions";
 import { Button, Container, Form } from "semantic-ui-react";
 
 

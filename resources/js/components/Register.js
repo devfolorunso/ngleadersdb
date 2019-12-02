@@ -3,7 +3,7 @@ import _ from 'lodash'
 import ReactDOM from "react-dom";
 // import { withRouter } from 'react-router-dom'
 
-import { register } from "./App";
+import { register } from "./UserFunctions";
 import { Button, Container, Icon, Message, Form } from "semantic-ui-react";
 
 class Register extends Component {

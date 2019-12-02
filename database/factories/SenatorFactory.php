@@ -15,5 +15,7 @@ $factory->define(Senator::class, function (Faker $faker) {
         'sen_zone' => $faker->country,
         'state' => $faker->state,
         'district' => $faker->city,
+        'political_party' => $faker->safeColorName,
+        'year_elected' => $faker->year,
     ];
 });
