@@ -36,6 +36,10 @@ Route::get('/senator/party/{party}', 'SenatorController@filterByParty');
 
 Route::get('/senator/year/{year}', 'SenatorController@filterByYear');
 
+Route::put('/senator/edit/{senator}', 'SenatorController@update');
+
+Route::delete('/senator/del/{senator}', 'SenatorController@destroy');
+
 Route::post('/senator/add','SenatorController@Store');
 
 
