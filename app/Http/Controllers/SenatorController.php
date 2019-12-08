@@ -190,7 +190,6 @@ class SenatorController extends Controller
             'sen_email' => 'required',
             'state' => 'required',
             'district' => 'required',
-            'year_elected' => 'required',
             'political_party' => 'required',
             'sen_pic' => 'required|mimes:png,jpg,jpeg',
         ]);
@@ -213,7 +212,6 @@ class SenatorController extends Controller
             'sen_zone' => $data['sen_zone'],
             'sen_email' => $data['sen_email'],
             'state' => $data['state'],
-            'year_elected' => $data['year_elected'],
             'political_party' => $data['political_party'],
             'district' => $data['district'],
             'sen_pic' =>  $image_url

@@ -2,13 +2,17 @@ import React, { Component } from "react";
 import _ from "lodash";
 import ReactDOM from "react-dom";
 // import { withRouter } from 'react-router-dom'
+import { addsenator } from "../insertFunctions";
+
 import { InputFile } from "semantic-ui-react-input-file";
-import {
-    DateInput,
-    TimeInput,
-    DateTimeInput,
-    DatesRangeInput
-} from "semantic-ui-calendar-react";
+
+
+// import {
+//     DateInput,
+//     TimeInput,
+//     DateTimeInput,
+//     DatesRangeInput
+// } from "semantic-ui-calendar-react";
 
 import {
     Button,
@@ -31,14 +35,12 @@ class AddSenators extends Component {
             // district: "",
             imgname: "",
             zone: "",
-            electyear: "",
             party:"",
             senstate: ""
         };
 
         this.onChange = this.onChange.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        // this.handleChangeZone = this.handleChangeZone.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.onImage = this.onImage.bind(this);
         this.handleChangeDate = this.handleChangeDate.bind(this);
@@ -82,19 +84,18 @@ class AddSenators extends Component {
             FormData to newRecord to be passed into addSenators function
         */
 
-              newRecord.append("sen_name", this.state.sname),
+            newRecord.append("sen_name", this.state.sname),
             newRecord.append("sen_phone", this.state.sphone),
             newRecord.append("district", this.state.value),
             newRecord.append("sen_zone", this.state.zone),
             newRecord.append("state", this.state.senstate),
-            newRecord.append("year_elected", this.state.electyear),
             newRecord.append("political_party", this.state.party),
             newRecord.append("sen_email", this.state.semail),
             newRecord.append("sen_pic", this.state.file, this.state.imgname);
 
         addsenator(newRecord).then(res => {
-            if (res.data) {
-                console.log(res.data.success);
+            if (res) {
+                // console.log(res.data);
             }
         });
     }
@@ -688,7 +689,7 @@ class AddSenators extends Component {
 
                             <Form.Field required>
 
-                                <Grid>
+                                {/* <Grid>
                                     <Grid.Column floated="left" width={6}>
                                     <label>Senator's Tenure</label>
                                 <DatesRangeInput
@@ -698,9 +699,9 @@ class AddSenators extends Component {
                                     value={this.state.electyear}
                                     onChange={this.handleChangeDate}
                                 />
-                                </Grid.Column>
+                                </Grid.Column> */}
 
-                                <Grid.Column floated="left" width={6}>
+                                {/* <Grid.Column floated="left" width={6}> */}
                                 <label>Political Part</label>
                                 <input
                                     placeholder="Political party"
@@ -708,8 +709,8 @@ class AddSenators extends Component {
                                     value={this.state.party}
                                     onChange={this.onChange}
                                 />
-                                </Grid.Column>
-                                </Grid>
+                                {/* </Grid.Column>
+                                </Grid> */}
                             </Form.Field>
 
                             <Form.Field required>
