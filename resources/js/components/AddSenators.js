@@ -103,22 +103,193 @@ class AddSenators extends Component {
         const { loading, value, imgname, file, fileURL } = this.state;
         const ngDistricts = [
             {
-                key: "Abia Central",
+                key: "Abia North",
                 value: "Abia Central",
-                text: "Abia Central"
+                text: "Abia South"
             },
-            { key: "Abia North", value: "Abia North", text: "Abia North" },
-            { key: "Abia South", value: "Abia South", text: "Abia South" },
+            { key: "Akwa Ibom North East", value: "Akwa Ibom North West", text: "Akwa Ibom South" },
+
             {
-                key: "Adamawa Central",
-                value: "Adamawa Central",
+                key: "Adamawa North",
+                value: "Adamawa South",
                 text: "Adamawa Central"
             },
             {
-                key: "Adamawa North",
-                value: "Adamawa North",
-                text: "Adamawa North"
-            }
+                key: "Anambra North",
+                value: "Anambra South",
+                text: "Anambra Central"
+            },
+            {
+                key: "Bauchi South",
+                value: "Bauchi Central",
+                text: "Bauchi North"
+            },
+            {
+                key: "Bayelsa East",
+                value: "Bayelsa Central",
+                text: "Bayelsa West"
+            },
+            {
+                key: "Benue North East",
+                value: "Benue North West",
+                text: "Benue South"
+            },
+            {
+                key: "Borno North",
+                value: "Borno Central",
+                text: "Borno South"
+            },
+            {
+                key: "Cross River North",
+                value: "Cross River Central",
+                text: "Cross River South"
+            },
+            {
+                key: "Delta North",
+                value: "Delta Central",
+                text: "Delta South"
+            },
+            {
+                key: "Ebonyi North",
+                value: "Ebonyi Central",
+                text: "Ebonyi South"
+            },
+            {
+                key: "Edo North",
+                value: "Edo Central",
+                text: "Edo South"
+            },
+            {
+                key: "Ekiti North",
+                value: "Ekiti Central",
+                text: "Ekiti South"
+            },
+            {
+                key: "Enugu East",
+                value: "Enugu West",
+                text: "Enugu North"
+            },
+            {
+                key: "Gombe North",
+                value: "Gombe Central",
+                text: "Gombe South"
+            },
+            {
+                key: "Imo East",
+                value: "Imo West",
+                text: "Imo North"
+            },
+            {
+                key: "Jigawa South-West",
+                value: "Jigawa North-East",
+                text: "Jigawa North-West"
+            },
+            {
+                key: "Jigawa South-West",
+                value: "Jigawa North-East",
+                text: "Jigawa North-West"
+            },
+            {
+                key: "Kaduna North",
+                value: "Kaduna Central",
+                text: "Kaduna South"
+            },
+            {
+                key: "Kano North",
+                value: "Kano Central",
+                text: "Kano South"
+            },
+            {
+                key: "Kastina North",
+                value: "Kastina Central",
+                text: "Kastina South"
+            },
+            {
+                key: "Kebbi North",
+                value: "Kebbi Central",
+                text: "Kebbi South"
+            },
+            {
+                key: "Kogi East",
+                value: "Kogi Central",
+                text: "Kogi West"
+            },
+            {
+                key: "Kwara North",
+                value: "Kwara Central",
+                text: "Kwara South"
+            },
+            {
+                key: "Lagos East",
+                value: "Lagos Central",
+                text: "Lagos West"
+            },
+            {
+                key: "Nassarawa South",
+                value: "Nassarawa West",
+                text: "Nassarawa North"
+            },
+            {
+                key: "Niger South",
+                value: "Niger East",
+                text: "Niger North"
+            },
+            {
+                key: "Ogun East",
+                value: "Ogun Central",
+                text: "Ogun West"
+            },
+            {
+                key: "Ondo North",
+                value: "Ondo Central",
+                text: "Ondo South"
+            },
+
+            {
+                key: "Osun East",
+                value: "Osun Central",
+                text: "Osun West"
+            },
+            {
+                key: "Oyo North",
+                value: "Oyo Central",
+                text: "Oyo South"
+            },
+            {
+                key: "Plateau North",
+                value: "Plateau Central",
+                text: "Plateau South"
+            },
+            {
+                key: "Rivers East",
+                value: "Rivers West",
+                text: "Rivers South East"
+            },
+            {
+                key: "Sokoto North",
+                value: "Sokoto East",
+                text: "Sokoto South"
+            },
+            {
+                key: "Taraba North",
+                value: "Taraba Central",
+                text: "Taraba South"
+            },
+            {
+                key: "Yobe North",
+                value: "Yobe East",
+                text: "Yobe South"
+            },
+            {
+                key: "Zamfara North",
+                value: "Zamfara Central",
+                text: "Zamfara West"
+            },
+            {
+                key: "Federal Capital Territory",
+                value: "Federal Capital Territory",
+                text: "Federal Capital Territory"
+            },
         ];
 
         // const ngzones = [
