@@ -6,7 +6,6 @@ import { addsenator } from "../insertFunctions";
 
 import { InputFile } from "semantic-ui-react-input-file";
 
-
 // import {
 //     DateInput,
 //     TimeInput,
@@ -35,7 +34,7 @@ class AddSenators extends Component {
             // district: "",
             imgname: "",
             zone: "",
-            party:"",
+            party: "",
             senstate: ""
         };
 
@@ -84,7 +83,7 @@ class AddSenators extends Component {
             FormData to newRecord to be passed into addSenators function
         */
 
-            newRecord.append("sen_name", this.state.sname),
+        newRecord.append("sen_name", this.state.sname),
             newRecord.append("sen_phone", this.state.sphone),
             newRecord.append("district", this.state.value),
             newRecord.append("sen_zone", this.state.zone),
@@ -118,9 +117,21 @@ class AddSenators extends Component {
                 value: "Abia South",
                 text: "Abia South"
             },
-            { key: "Akwa Ibom North West", value: "Akwa Ibom North West", text: "Akwa Ibom West" },
-            { key: "Akwa Ibom North East", value: "Akwa Ibom North East", text: "Akwa Ibom East" },
-            { key: "Akwa Ibom North South", value: "Akwa Ibom North South", text: "Akwa Ibom South" },
+            {
+                key: "Akwa Ibom North West",
+                value: "Akwa Ibom North West",
+                text: "Akwa Ibom West"
+            },
+            {
+                key: "Akwa Ibom North East",
+                value: "Akwa Ibom North East",
+                text: "Akwa Ibom East"
+            },
+            {
+                key: "Akwa Ibom North South",
+                value: "Akwa Ibom North South",
+                text: "Akwa Ibom South"
+            },
 
             {
                 key: "Adamawa North",
@@ -637,7 +648,7 @@ class AddSenators extends Component {
                 key: "Federal Capital Territory",
                 value: "Federal Capital Territory",
                 text: "Federal Capital Territory"
-            },
+            }
         ];
 
         // const ngzones = [
@@ -667,6 +678,17 @@ class AddSenators extends Component {
                                 />
                             </Form.Field>
 
+                            <Form.Field
+                                required
+                                control={Select}
+                                name="district"
+                                label="Senatorial District"
+                                options={ngDistricts}
+                                placeholder="Senatorial District"
+                                value={value}
+                                onChange={this.handleChange}
+                            />
+
                             <Form.Field required>
                                 <label>State</label>
                                 <input
@@ -683,42 +705,6 @@ class AddSenators extends Component {
                                     placeholder="Geo Zone"
                                     name="zone"
                                     value={this.state.zone}
-                                    onChange={this.onChange}
-                                />
-                            </Form.Field>
-
-                            <Form.Field required>
-
-                                {/* <Grid>
-                                    <Grid.Column floated="left" width={6}>
-                                    <label>Senator's Tenure</label>
-                                <DatesRangeInput
-                                    clearable
-                                    name="electyear"
-                                    placeholder="Senator's Tenure"
-                                    value={this.state.electyear}
-                                    onChange={this.handleChangeDate}
-                                />
-                                </Grid.Column> */}
-
-                                {/* <Grid.Column floated="left" width={6}> */}
-                                <label>Political Part</label>
-                                <input
-                                    placeholder="Political party"
-                                    name="party"
-                                    value={this.state.party}
-                                    onChange={this.onChange}
-                                />
-                                {/* </Grid.Column>
-                                </Grid> */}
-                            </Form.Field>
-
-                            <Form.Field required>
-                                <label>Email</label>
-                                <input
-                                    placeholder="E-mail"
-                                    name="semail"
-                                    value={this.state.semail}
                                     onChange={this.onChange}
                                 />
                             </Form.Field>
@@ -742,7 +728,31 @@ class AddSenators extends Component {
                                 </Grid>
                             </Form.Field>
 
-                            <Form.Field >
+                            <Form.Field required>
+                                {/* <Grid>
+    <Grid.Column floated="left" width={6}>
+    <label>Senator's Tenure</label>
+<DatesRangeInput
+    clearable
+    name="electyear"
+    placeholder="Senator's Tenure"
+    value={this.state.electyear}
+    onChange={this.handleChangeDate}
+/>
+</Grid.Column> */}
+
+                                {/* <Grid.Column floated="left" width={6}> */}
+                                <label>Political Party</label>
+                                <input
+                                    placeholder="Political party"
+                                    name="party"
+                                    value={this.state.party}
+                                    onChange={this.onChange}
+                                />
+                                {/* </Grid.Column>
+</Grid> */}
+                            </Form.Field>
+                            <Form.Field>
                                 <label>Phone</label>
                                 <input
                                     placeholder="Mobile Number"
@@ -752,16 +762,15 @@ class AddSenators extends Component {
                                 />
                             </Form.Field>
 
-                            <Form.Field
-                                required
-                                control={Select}
-                                name="district"
-                                label="Senatorial District"
-                                options={ngDistricts}
-                                placeholder="Senatorial District"
-                                value={value}
-                                onChange={this.handleChange}
-                            />
+                            <Form.Field required>
+                                <label>Email</label>
+                                <input
+                                    placeholder="E-mail"
+                                    name="semail"
+                                    value={this.state.semail}
+                                    onChange={this.onChange}
+                                />
+                            </Form.Field>
 
                             <Button
                                 color="twitter"
@@ -775,7 +784,9 @@ class AddSenators extends Component {
                                 }
                                 loading={loading}
                                 type="submit"
-                            >Submit</Button>
+                            >
+                                Submit
+                            </Button>
                         </Form>
                     </Container>
                 </div>
