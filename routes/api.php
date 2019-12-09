@@ -26,6 +26,8 @@ Route::get('/senator/all', 'SenatorController@all');
 
 Route::get('/senator/state/{state}', 'SenatorController@filterState');
 
+Route::get('/senator/limit/{limit}', 'SenatorController@limit');
+
 Route::get('/senator/geozone/{geozone}', 'SenatorController@filterZone');
 
 Route::get('/senator/nameprefix/{alphabet}', 'SenatorController@filterByAlphabet');
@@ -34,7 +36,9 @@ Route::get('/senator/name/{name}', 'SenatorController@filterByName');
 
 Route::get('/senator/party/{party}', 'SenatorController@filterByParty');
 
-Route::get('/senator/year/{year}', 'SenatorController@filterByYear');
+// Done 09/12/2019
+
+// Route::get('/senator/year/{year}', 'SenatorController@filterByYear');
 
 Route::put('/senator/edit/{senator}', 'SenatorController@update');
 

@@ -17,9 +17,29 @@ class SenatorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index():SenatorResourceCollection
+    public function limit(Request $request, $limit)
     {
-        return new SenatorResourceCollection(Senator::paginate());
+        $limit = $request['limit'];
+
+        if (is_numeric($limit) && $limit > 1) {
+
+            $limitsenators = Senator::take($limit)->get();
+
+            if($limitsenators->count() > 0){
+                return new SenatorResourceCollection($limitsenators);
+            }
+            else
+            {
+                return response()->json(['error' => "No records found", 'status' => '404']);
+            }
+        
+        }
+        
+        else
+        {
+            return response()->json(['error' => "Try passing an integer value or any value greater than 1", 'status' => '307']);
+        }
+
     }
 
 
@@ -30,7 +50,7 @@ class SenatorController extends Controller
      */
     public function all():SenatorResourceCollection
     {
-        return new SenatorResourceCollection(Senator::all());
+        return new SenatorResourceCollection(Senator::paginate(15));
     }
 
 
@@ -183,7 +203,10 @@ class SenatorController extends Controller
      */
     public function store(Request $request)
     {
-        $data=  $request->validate([
+
+        // dd("helo");
+
+        $data = $request->validate([
             'sen_name' => 'required',
             'sen_phone' => 'required',
             'sen_zone' => 'required',
@@ -216,6 +239,7 @@ class SenatorController extends Controller
             'district' => $data['district'],
             'sen_pic' =>  $image_url
             ]);
+
 
             if($senator){
                 return response()->json(['success' => "Senator ".$data['sen_name']." Added successfully", 'status' => 201]);

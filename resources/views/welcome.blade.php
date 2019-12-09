@@ -1,82 +1,36 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.homelayout')
 
-        <title>NGLeadersDB</title>
+@section('content')
+    <div class="container space-top">
+        
+        <div class="row justify-content-center">
+            
+            <div class="col-md-8 px-2">
+               
+                <div class="text-center">
+                    
+                    <H1 class="welcome-note">Welcome to <SPAN style="color:#76BA1B;">NG</SPAN>leaders<SPAN style="color:#76BA1B;">DB</SPAN>
+                    </H1>
+                    
+                    <p class="mt-4 about-text">An Open, free, and crowd-sourced database of Information about leaders from Nigeria. We also provide a free and almost a no-brainer JSON API for all developers wanting to use it. <br/>Currently supporting Information in the following sectors: </p>
+                    
+                    <div class="container support-gallery d-flex justify-content-center" width="100%">
+                        {{-- <marquee> --}}
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Seal_of_the_House_of_Representatives_of_Nigeria.svg/2000px-Seal_of_the_House_of_Representatives_of_Nigeria.svg.png" alt="" width="80" height="80" class="mr-2">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Seal_of_the_Senate_of_Nigeria.svg/1200px-Seal_of_the_Senate_of_Nigeria.svg.png" alt="" width="80" height="80" class="mr-2">
 
-            .full-height {
-                height: 100vh;
-            }
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Seal_of_the_President_of_Nigeria.svg/2000px-Seal_of_the_President_of_Nigeria.svg.png" alt="" width="80" height="80" class="mr-2">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+                        {{-- </marquee> --}}
 
-            .position-ref {
-                position: relative;
-            }
+                    </div>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-
-            <div class="content">
-                <div class="title m-b-md">
-                    NGLeadersDB
                 </div>
 
-                <div class="links">
-                    <a href="http://ngleadersdb.herokuapp.com/api/senator">Senators</a>
-                    <a href="http://ngleadersdb.herokuapp.com/api/reps">Representatives</a>
-                    <a href="http://ngleadersdb.herokuapp.com/api/local_reps">Local Zone Representatives</a>
-                </div>
             </div>
+
         </div>
-    </body>
-</html>
+    </div>
+@endsection

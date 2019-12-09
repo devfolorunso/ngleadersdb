@@ -23,4 +23,8 @@ Route::get('/register', 'AuthenticationController@registerationPage');
 
 Route::get('/admin', 'AdminController@index')->name('admin');
 
+Route::get('/api', function () {
+    return view('home');
+});
+
 // Route::view('/admin{path?}', 'admin');
