@@ -204,49 +204,55 @@ class SenatorController extends Controller
     public function store(Request $request)
     {
 
-        // dd("helo");
-
-        $data = $request->validate([
-            'sen_name' => 'required',
-            'sen_phone' => 'required',
-            'sen_zone' => 'required',
-            'sen_email' => 'required',
-            'state' => 'required',
-            'district' => 'required',
-            'political_party' => 'required',
-            'sen_pic' => 'required|mimes:png,jpg,jpeg',
-        ]);
-
-        $image = $request->file('sen_pic');
-
-        $name = $request->file('sen_pic')->getClientOriginalName();
-
-        $image_name = $request->file('sen_pic')->getRealPath();;
-
-        /* Store image on cloudinary*/
-        Cloudder::upload($image_name, null);
-        list($width, $height) = getimagesize($image_name);
-
-        $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
-
-        $senator = Senator::create([
-            'sen_name' => $data['sen_name'],
-            'sen_phone' => $data['sen_phone'],
-            'sen_zone' => $data['sen_zone'],
-            'sen_email' => $data['sen_email'],
-            'state' => $data['state'],
-            'political_party' => $data['political_party'],
-            'district' => $data['district'],
-            'sen_pic' =>  $image_url
-            ]);
+        for($i=0; $i<=93; $i++){
 
 
-            if($senator){
-                return response()->json(['success' => "Senator ".$data['sen_name']." Added successfully", 'status' => 201]);
-                // return new SenatorResource($senator);
-            }else{
-                return response()->json(['Success' => "Something went wrong! Ensure that you fill all fields", 'status' => 422]);
-            }
+        // $data = $request[$i]->validate([
+        //     'sen_name' => 'required',
+        //     'sen_phone' => 'required',
+        //     'sen_zone' => 'required',
+        //     'sen_email' => 'required',
+        //     'state' => 'required',
+        //     'district' => 'required',
+        //     'political_party' => 'required',
+        //     // 'sen_pic' => 'required|mimes:png,jpg,jpeg',
+        //     'sen_pic' => 'required',
+        // ]);
+
+        // $image = $request->file('sen_pic');
+
+        // $name = $request->file('sen_pic')->getClientOriginalName();
+
+        // $image_name = $request->file('sen_pic')->getRealPath();;
+
+        //  Store image on cloudinary
+        // Cloudder::upload($image_name, null);
+        // list($width, $height) = getimagesize($image_name);
+
+        // $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
+        $senator = Senator::create($request[$i]);
+
+        // return "True";
+        // $senator = Senator::create([
+        //     'sen_name' => $data['sen_name'],
+        //     'sen_phone' => $data['sen_phone'],
+        //     'sen_zone' => $data['sen_zone'],
+        //     'sen_email' => $data['sen_email'],
+        //     'state' => $data['state'],
+        //     'political_party' => $data['political_party'],
+        //     'district' => $data['district'],
+        //     'sen_pic' =>  $data['sen_pic']
+        // ]);
+
+
+            // if($senator){
+            //     return response()->json(['success' => "Senator ".$data['sen_name']." Added successfully", 'status' => 201]);
+            //     // return new SenatorResource($senator);
+            // }else{
+            //     return response()->json(['Success' => "Something went wrong! Ensure that you fill all fields", 'status' => 422]);
+            // }
+    
+    }
 
     }
 
